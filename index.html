@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URBVO Coatings — Factory-Direct Coating Systems</title>
+<style>
+/* ========== Reset & Base ========== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: #1B2A4E;
+  line-height: 1.6;
+  background: #fff;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+:root {
+  --primary: #1B2A4E;
+  --primary-light: #2C3E6E;
+  --accent: #E85D3C;
+  --accent-dark: #C84826;
+  --bg-light: #F5F6F8;
+  --bg-cream: #F9F7F3;
+  --text-dark: #1B2A4E;
+  --text-mid: #5A6478;
+  --text-light: #8A93A6;
+  --border: #E4E6EB;
+}
+
+/* ========== Typography ========== */
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.15; color: var(--primary); }
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.02em; }
+h3 { font-size: 1.4rem; }
+.eyebrow {
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+}
+
+/* ========== Layout ========== */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+section { padding: 6rem 0; }
+
+/* ========== Top Bar ========== */
+.topbar {
+  background: var(--primary); color: #fff; font-size: 0.85rem;
+  padding: 0.6rem 0;
+}
+.topbar .container { display: flex; justify-content: space-between; align-items: center; }
+.topbar a { opacity: 0.9; }
+.topbar a:hover { opacity: 1; color: var(--accent); }
+.topbar-links { display: flex; gap: 1.5rem; }
+
+/* ========== Navigation ========== */
+nav { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 0; }
+.logo { display: flex; align-items: center; flex: 0 0 auto; }
+.logo img { display: block; width: 148px; height: auto; }
+.nav-links { display: flex; gap: 1.65rem; align-items: center; }
+.nav-links a { font-size: 0.95rem; font-weight: 500; color: var(--text-dark); transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-links a[aria-current="page"] { color: var(--accent); font-weight: 700; }
+.btn-cta-nav {
+  background: var(--accent); color: #fff !important; padding: 0.7rem 1.4rem;
+  border-radius: 4px; font-weight: 600; transition: background 0.2s;
+}
+.btn-cta-nav:hover { background: var(--accent-dark); color: #fff !important; }
+
+/* ========== Hero ========== */
+.hero {
+  min-height: calc(100vh - 110px);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('images/hero-image-01.jpg') center / cover no-repeat;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 20, 43, 0.74) 0%, rgba(16, 31, 61, 0.50) 40%, rgba(16, 31, 61, 0.10) 70%, rgba(16, 31, 61, 0) 100%);
+  pointer-events: none;
+}
+.hero-grid {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.hero-content {
+  max-width: 780px;
+  padding: 6rem 0;
+}
+.hero h1 { color: #fff; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.18); }
+.hero p.lead { font-size: 1.1rem; color: rgba(255,255,255,0.88); margin: 1.5rem 0 2.5rem; max-width: 620px; }
+.hero-buttons { display: grid; grid-template-columns: repeat(2, minmax(250px, 1fr)); gap: .85rem; max-width: 700px; }
+.hero-cta { display: flex; flex-direction: column; gap: .55rem; padding: .75rem; border: 1px solid rgba(255,255,255,.26); border-radius: 8px; background: rgba(8,18,42,.54); box-shadow: 0 14px 38px rgba(3,10,24,.18); backdrop-filter: blur(8px); transition: transform .2s, border-color .2s, background .2s; }
+.hero-cta:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.52); background: rgba(8,18,42,.68); }
+.hero-route { color: #FF8A6E; font-size: .68rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; padding: .1rem .2rem 0; }
+.btn-primary, .btn-secondary {
+  padding: 1rem 1.8rem; font-weight: 600; font-size: 0.95rem;
+  border-radius: 4px; cursor: pointer; border: 2px solid; transition: all 0.2s;
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 1rem; text-align: left;
+}
+.btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+.btn-secondary { background: transparent; color: var(--primary); border-color: var(--primary); }
+.btn-secondary:hover { background: var(--primary); color: #fff; }
+.btn-hint { font-size: 0.78rem; line-height: 1.45; color: var(--text-light); padding: 0 .2rem .15rem; }
+.hero .btn-primary { background: var(--accent); border-color: var(--accent); }
+.hero .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.hero .btn-secondary { color: #fff; border-color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.06); }
+.hero .btn-secondary:hover { color: var(--primary); background: #fff; border-color: #fff; }
+.hero .btn-hint { color: rgba(255,255,255,0.70); }
+
+/* ========== Factory Strength ========== */
+.factory-strength { background: linear-gradient(135deg, #0D1831 0%, #192B54 64%, #22365E 100%); color: #fff; position: relative; overflow: hidden; scroll-margin-top: 76px; }
+.factory-strength::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 12% 12%, rgba(232,93,60,.13), transparent 30%), linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: auto, 48px 48px, 48px 48px; pointer-events: none; }
+.factory-console { position: relative; display: grid; grid-template-columns: .72fr 1.28fr; gap: 3.5rem; align-items: stretch; }
+.factory-copy { display: flex; flex-direction: column; padding: .5rem 0; }
+.factory-copy .eyebrow { color: #FF8265; }
+.factory-copy h2 { color: #fff; font-size: clamp(2.4rem, 4vw, 3.7rem); }
+.factory-copy > p { color: rgba(255,255,255,.7); margin-top: 1.35rem; max-width: 470px; }
+.factory-actions { display: flex; gap: 1.3rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.factory-actions .link-arrow { color: #FF8265; border-bottom-color: #FF8265; }
+.factory-stat-grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: auto; padding-top: 2.5rem; }
+.factory-stat { padding: 1.15rem 1.1rem 1.15rem 0; border-top: 1px solid rgba(255,255,255,.18); }
+.factory-stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.18); }
+.factory-stat:nth-child(even) { padding-left: 1.25rem; }
+.stat-num { font-size: 1.75rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+.stat-label { font-size: .79rem; color: rgba(255,255,255,.82); margin-top: .2rem; font-weight: 700; letter-spacing: .025em; }
+.factory-accordion { display: flex; min-width: 0; height: 520px; gap: .65rem; padding: .65rem; border: 1px solid rgba(255,255,255,.14); border-radius: 10px; background: rgba(255,255,255,.055); backdrop-filter: blur(8px); }
+.factory-panel { position: relative; flex: 1; min-width: 0; overflow: hidden; border-radius: 6px; color: #fff; isolation: isolate; transition: flex .5s cubic-bezier(.22,.8,.25,1); }
+.factory-panel--featured { flex: 1.9; }
+.factory-accordion:hover .factory-panel, .factory-accordion:focus-within .factory-panel { flex: 1; }
+.factory-accordion .factory-panel:hover, .factory-accordion .factory-panel:focus-visible { flex: 2.35; }
+.factory-panel img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s cubic-bezier(.22,.8,.25,1), filter .35s; }
+.factory-panel--workshop img { object-position: center 52%; }
+.factory-panel--mixing img { object-position: center 48%; }
+.factory-panel--quality img { object-position: center 48%; }
+.factory-panel--shipment img { object-position: center 52%; }
+.factory-panel:hover img, .factory-panel:focus-visible img { transform: scale(1.035); }
+.factory-panel::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,13,30,.02) 32%, rgba(5,13,30,.94) 100%); pointer-events: none; }
+.factory-panel-index { position: absolute; z-index: 2; top: 1rem; left: 1rem; color: rgba(255,255,255,.76); font-size: .67rem; font-weight: 800; letter-spacing: .15em; }
+.factory-panel-copy { position: absolute; z-index: 2; left: 1rem; right: 1rem; bottom: 1.1rem; }
+.factory-panel-copy small { display: block; color: #FF8265; font-size: .65rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .35rem; }
+.factory-panel-copy h3 { color: #fff; font-size: 1.08rem; white-space: nowrap; }
+.factory-panel-copy p { max-height: 0; opacity: 0; overflow: hidden; color: rgba(255,255,255,.7); font-size: .78rem; line-height: 1.45; margin-top: .45rem; transition: max-height .35s, opacity .35s; }
+.factory-panel--featured .factory-panel-copy p, .factory-panel:hover .factory-panel-copy p, .factory-panel:focus-visible .factory-panel-copy p { max-height: 70px; opacity: 1; }
+.factory-accordion:hover .factory-panel--featured:not(:hover) .factory-panel-copy p { max-height: 0; opacity: 0; }
+.quality-rail { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); margin-top: 2rem; border-top: 1px solid rgba(255,255,255,.16); border-bottom: 1px solid rgba(255,255,255,.16); }
+.quality-rail-item { padding: 1.15rem 1rem; border-right: 1px solid rgba(255,255,255,.14); }
+.quality-rail-item:first-child { padding-left: 0; }
+.quality-rail-item:last-child { border-right: 0; }
+.quality-rail-item strong { display: block; color: #fff; font-size: .8rem; }
+.quality-rail-item span { display: block; margin-top: .2rem; color: rgba(255,255,255,.48); font-size: .68rem; }
+.quality-rail-item strong::before { content: ''; display: inline-block; width: 7px; height: 7px; margin-right: .55rem; background: var(--accent); border-radius: 50%; }
+
+/* ========== Section Common ========== */
+.section-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 3.5rem; gap: 2rem; flex-wrap: wrap;
+}
+.section-head h2 { max-width: 700px; }
+.section-head p { color: var(--text-mid); max-width: 460px; font-size: 0.95rem; }
+.link-arrow {
+  color: var(--accent); font-weight: 600; font-size: 0.9rem;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  border-bottom: 1px solid var(--accent); padding-bottom: 2px;
+  transition: gap 0.2s;
+}
+.link-arrow:hover { gap: 0.7rem; }
+
+/* ========== Systems Section ========== */
+.systems { background: var(--bg-light); }
+.systems .section-head { display: block; }
+.systems .section-head h2 { max-width: none; white-space: nowrap; font-size: clamp(2.25rem,4.4vw,4.1rem); }
+.systems .section-head > p { max-width: 850px; margin-top: 1.1rem; }
+.system-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.system-card {
+  background: #fff; border-radius: 6px; overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex; flex-direction: column;
+}
+.system-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(27,42,78,0.1); }
+.system-img {
+  height: 265px; background: var(--primary);
+  position: relative; overflow: hidden;
+}
+.system-img img { width: 100%; height: 100%; object-fit: cover; }
+.system-tag {
+  position: absolute; top: 1rem; left: 1rem; background: var(--accent);
+  color: #fff; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.6rem;
+  letter-spacing: 0.1em; border-radius: 2px; z-index: 1;
+}
+.system-body { padding: 1.2rem 1.35rem 1.3rem; flex: 1; display: flex; flex-direction: column; justify-content:center; }
+.system-num { font-size: 0.75rem; color: var(--accent); font-weight: 700; letter-spacing: 0.15em; }
+.system-body h3 { margin: 0; font-size: 1.2rem; }
+.system-body p { color: var(--text-mid); font-size: 0.9rem; flex: 1; }
+.system-tags { display: flex; gap: 0.4rem; margin: 1rem 0; flex-wrap: wrap; }
+.system-tags span {
+  font-size: 0.72rem; background: var(--bg-light); color: var(--text-dark);
+  padding: 0.25rem 0.6rem; border-radius: 3px; font-weight: 500;
+}
+.system-meta {
+  font-size: 0.8rem; color: var(--text-light);
+  padding-top: 1rem; border-top: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 0.6rem;
+}
+.system-meta-row { display: flex; justify-content: space-between; align-items: center; }
+.system-meta-label { font-size: 0.7rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.1em; }
+.system-meta-value { font-size: 0.82rem; color: var(--text-dark); font-weight: 500; }
+
+/* ========== Distributor Section ========== */
+.distributor { background: #fff; }
+.dist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.dist-card {
+  background: var(--bg-cream); border-radius: 6px; padding: 2rem;
+  display: flex; flex-direction: column; gap: 1rem;
+  border: 1px solid var(--border); transition: all 0.2s;
+}
+.dist-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 24px rgba(27,42,78,0.08); }
+.dist-can {
+  height: 140px; background: #fff; border: 1px solid var(--border);
+  border-radius: 4px; display: grid; place-items: center;
+  position: relative; overflow: hidden;
+}
+.dist-can img { width: 100%; height: 100%; object-fit: cover; }
+.dist-can-tag {
+  position: absolute; top: 0.8rem; left: 0.8rem;
+  font-size: 0.65rem; color: var(--primary); letter-spacing: 0.1em;
+  background: rgba(255,255,255,0.9); padding: 0.3rem 0.55rem; border-radius: 2px;
+}
+.dist-label {
+  font-size: 0.75rem; color: var(--accent); font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+}
+.dist-card h3 { font-size: 1.2rem; }
+.dist-card p { color: var(--text-mid); font-size: 0.9rem; }
+.dist-features { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+.dist-features li {
+  font-size: 0.85rem; color: var(--text-dark);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.dist-features li::before {
+  content: '✓'; color: var(--accent); font-weight: 800;
+}
+
+.retail-view-all { display: flex; justify-content: center; margin-top: 3rem; }
+.btn-retail-all {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent); color: #fff; padding: 1rem 2.2rem;
+  border-radius: 4px; font-weight: 700; transition: background 0.2s, transform 0.2s;
+}
+.btn-retail-all:hover { background: var(--accent-dark); transform: translateY(-2px); }
+
+/* ========== Cases Section ========== */
+.cases { background: #fff; }
+.case-group + .case-group { margin-top: 3.5rem; padding-top: 3.5rem; border-top: 1px solid var(--border); }
+.case-group-head { display:flex; justify-content:space-between; align-items:end; gap:2rem; margin-bottom:1.4rem; }
+.case-group-head h3 { font-size:1.5rem; }
+.case-group-head p { color:var(--text-mid); font-size:.88rem; max-width:520px; }
+.case-grid.projects { grid-template-columns:repeat(4,1fr); }
+.case-grid.partnerships { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.case-grid.partnerships .case-img { height:270px; }
+.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.case-card {
+  background: #fff; border-radius: 6px; overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s; display: block; color: inherit;
+}
+.case-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(27,42,78,0.1); }
+.case-img {
+  height: 200px; background: var(--primary); position: relative; overflow: hidden;
+}
+.case-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .35s ease; }
+.case-card:hover .case-img img { transform: scale(1.035); }
+.case-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,26,51,.08), transparent 55%); pointer-events: none; }
+.case-tag {
+  position: absolute; top: 1rem; left: 1rem;
+  background: var(--accent); color: #fff;
+  font-size: 0.7rem; font-weight: 600; padding: 0.3rem 0.6rem;
+  letter-spacing: 0.1em; z-index: 1;
+}
+.case-body { padding: 1.5rem; }
+.case-loc { font-size: 0.75rem; color: var(--text-light); letter-spacing: 0.1em; }
+.case-body h4 { margin: 0.4rem 0; font-size: 1.1rem; }
+.case-meta {
+  display: flex; gap: 1rem; margin-top: 0.8rem;
+  font-size: 0.8rem; color: var(--text-mid);
+}
+
+/* ========== Contact / Form ========== */
+.contact { background: var(--primary); color: #fff; }
+.contact .eyebrow { color: var(--accent); }
+.contact h2 { color: #fff; }
+.contact p.lead { color: rgba(255,255,255,0.8); max-width: 500px; margin-top: 1rem; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: start; }
+.contact-form {
+  background: #fff; color: var(--text-dark); border-radius: 6px;
+  padding: 2.5rem; display: flex; flex-direction: column; gap: 1.2rem;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.85rem; font-weight: 600; }
+.form-group input, .form-group select, .form-group textarea {
+  padding: 0.8rem 1rem; border: 1px solid var(--border);
+  border-radius: 4px; font-size: 0.9rem; font-family: inherit;
+  background: #fff; color: var(--text-dark);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--accent);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-submit {
+  background: var(--accent); color: #fff; border: none;
+  padding: 1rem 1.5rem; border-radius: 4px; font-weight: 600;
+  font-size: 0.95rem; cursor: pointer; margin-top: 0.5rem;
+}
+.form-submit:hover { background: var(--accent-dark); }
+
+/* ========== Footer ========== */
+footer { background: #0F1A33; color: rgba(255,255,255,0.7); padding: 3rem 0 1.5rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
+.footer-grid h4 { color: #fff; margin-bottom: 1rem; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.footer-grid a { display: block; padding: 0.3rem 0; font-size: 0.9rem; transition: color 0.2s; }
+.footer-grid a:hover { color: var(--accent); }
+.footer-bottom {
+  margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; font-size: 0.85rem; flex-wrap: wrap; gap: 1rem;
+}
+
+/* ========== WhatsApp Float ========== */
+.wa-float {
+  position: fixed; bottom: 2rem; right: 2rem;
+  width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+  display: grid; place-items: center; color: #fff; font-size: 1.6rem;
+  box-shadow: 0 6px 20px rgba(37,211,102,0.4); z-index: 99;
+  text-decoration: none;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 968px) {
+  .contact-grid, .factory-console { grid-template-columns: 1fr; }
+  .systems .section-head { grid-template-columns: 1fr; }
+  .systems .section-head > p { justify-self: start; }
+  .system-grid, .dist-grid, .case-grid, .case-grid.projects, .case-grid.partnerships { grid-template-columns: 1fr 1fr; }
+  .factory-console { gap: 2.5rem; }
+  .factory-copy > p { max-width: 620px; }
+  .factory-stat-grid { max-width: 620px; }
+  .factory-accordion { height: 480px; }
+  .quality-rail { grid-template-columns: repeat(3, 1fr); }
+  .quality-rail-item:nth-child(3) { border-right: 0; }
+  .quality-rail-item:nth-child(-n+3) { border-bottom: 1px solid rgba(255,255,255,.14); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .hero { min-height: calc(100vh - 106px); }
+  .hero::before { background-position: 58% center; }
+  .hero-content { max-width: 680px; padding: 5rem 0; }
+  .form-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 568px) {
+  .hero {
+    min-height: calc(100vh - 100px);
+  }
+  .hero::before { background-position: 62% center; }
+  .hero::after { background: linear-gradient(90deg, rgba(10, 20, 43, 0.80) 0%, rgba(16, 31, 61, 0.58) 68%, rgba(16, 31, 61, 0.18) 100%); }
+  .hero-content { padding: 4rem 0; }
+  .logo img { width: 130px; }
+  .hero-buttons { width: 100%; grid-template-columns: 1fr; }
+  .hero-cta { width: 100%; }
+  .hero .btn-primary, .hero .btn-secondary { width: 100%; }
+  .system-grid, .dist-grid, .case-grid, .case-grid.projects, .case-grid.partnerships { grid-template-columns: 1fr; }
+  .systems .section-head h2 { white-space: normal; }
+  .case-group-head { align-items:flex-start; flex-direction:column; gap:.6rem; }
+  .factory-strength { padding: 4.5rem 0; }
+  .factory-accordion { height: 430px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .factory-accordion::-webkit-scrollbar { display: none; }
+  .factory-accordion .factory-panel, .factory-accordion:hover .factory-panel, .factory-accordion:focus-within .factory-panel, .factory-accordion .factory-panel:hover, .factory-accordion .factory-panel:focus-visible { flex: 0 0 84%; scroll-snap-align: center; }
+  .factory-panel-copy h3 { font-size: 1.2rem; }
+  .factory-panel-copy p, .factory-panel--featured .factory-panel-copy p { max-height: 70px; opacity: 1; }
+  .factory-stat { padding: 1rem .9rem 1rem 0; }
+  .stat-num { font-size: 1.4rem; }
+  .quality-rail { grid-template-columns: 1fr 1fr; }
+  .quality-rail-item, .quality-rail-item:first-child { padding: .9rem .75rem; border-right: 1px solid rgba(255,255,255,.14); border-bottom: 1px solid rgba(255,255,255,.14); }
+  .quality-rail-item:nth-child(even) { border-right: 0; }
+  .quality-rail-item:nth-last-child(-n+2) { border-bottom: 0; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
+<link rel="stylesheet" href="site-shared.css">
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="topbar">
+  <div class="container">
+    <span>Direct Coating Manufacturer · Est. 2005</span>
+    <div class="topbar-links">
+      <a href="manufacturing.html#process">OEM / ODM</a>
+      <a href="#contact">Technical Support</a>
+      <a href="#contact">Global Supply</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== NAVIGATION ========== -->
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" aria-label="URBVO home"><img src="images/urbvo-logo.png" alt="URBVO"></a>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page">Home</a>
+      <div class="nav-dropdown"><a href="about-us.html">About Us</a><div class="nav-submenu"><a href="about-us.html">Company Overview</a><a href="manufacturing.html">Manufacturing</a><a href="blog.html">Blog</a><a href="certificates.html">Certificates</a></div></div>
+      <a href="#systems">Professional Systems</a>
+      <a href="#products">Retail &amp; Distribution</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="btn-cta-nav">Get a Solution</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== 1. HERO ========== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="eyebrow">Factory-Direct Coating Systems</div>
+      <h1>More than coating products.<br>A manufacturing partner for your market.</h1>
+      <p class="lead">
+        From complete flooring systems to private-label products, we support formulation, production, packaging and export from one factory.
+      </p>
+      <div class="hero-buttons">
+        <div class="hero-cta">
+          <span class="hero-route">01 · Professional Systems</span>
+          <a href="#systems" class="btn-primary"><span>Find My Flooring System</span><span aria-hidden="true">→</span></a>
+          <span class="btn-hint">For contractors, project buyers and specifiers</span>
+        </div>
+        <div class="hero-cta">
+          <span class="hero-route">02 · Retail &amp; Distribution</span>
+          <a href="#products" class="btn-secondary"><span>Retail &amp; Private Label</span><span aria-hidden="true">→</span></a>
+          <span class="btn-hint">For shops, dealers and private-label partners</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 2. SOURCE FACTORY & QUALITY STRENGTH ========== -->
+<section class="factory-strength" id="manufacturing">
+  <div class="container">
+    <div class="factory-console">
+      <div class="factory-copy">
+        <div class="eyebrow">Manufacturing Capability</div>
+        <h2>Built to formulate,<br>manufacture and<br>supply at scale.</h2>
+        <p>Controlled formulation, production, batch testing, packaging and export preparation help project buyers and distributors build a more dependable supply chain.</p>
+        <div class="factory-actions">
+          <a href="manufacturing.html" class="link-arrow">Explore the factory →</a>
+          <a href="#contact" class="link-arrow">Discuss OEM / ODM →</a>
+        </div>
+        <div class="factory-stat-grid" aria-label="URBVO manufacturing statistics">
+          <div class="factory-stat"><div class="stat-num">20+</div><div class="stat-label">Years of Manufacturing</div></div>
+          <div class="factory-stat"><div class="stat-num">80 Tons</div><div class="stat-label">Daily Production</div></div>
+          <div class="factory-stat"><div class="stat-num">15,000+ m²</div><div class="stat-label">Factory Area</div></div>
+          <div class="factory-stat"><div class="stat-num">40+</div><div class="stat-label">Export Markets</div></div>
+        </div>
+      </div>
+
+      <div class="factory-accordion" aria-label="URBVO manufacturing capabilities">
+        <a class="factory-panel factory-panel--featured factory-panel--workshop" href="manufacturing.html#production" aria-label="View the URBVO production floor">
+          <img src="images/manufacturing-workshop-overview-vertical.jpg" alt="Overview of the URBVO coating production floor" loading="lazy">
+          <span class="factory-panel-index">01</span>
+          <span class="factory-panel-copy"><small>Factory</small><h3>Production Floor</h3><p>15,000 m² of coordinated manufacturing and material handling space.</p></span>
+        </a>
+        <a class="factory-panel factory-panel--mixing" href="manufacturing.html#production-mixing" aria-label="View URBVO batch mixing">
+          <img src="images/manufacturing-mixing-process.jpg" alt="Coating batch mixing in production" loading="lazy">
+          <span class="factory-panel-index">02</span>
+          <span class="factory-panel-copy"><small>Production</small><h3>Batch Mixing</h3><p>Controlled processing follows the approved product specification.</p></span>
+        </a>
+        <a class="factory-panel factory-panel--quality" href="manufacturing.html#laboratory" aria-label="View URBVO quality testing">
+          <img src="images/manufacturing-color-measurement.jpg" alt="Digital color measurement of coating samples" loading="lazy">
+          <span class="factory-panel-index">03</span>
+          <span class="factory-panel-copy"><small>Quality</small><h3>Batch Control</h3><p>Sample, color and performance checks support consistent release.</p></span>
+        </a>
+        <a class="factory-panel factory-panel--shipment" href="manufacturing.html#shipment-container" aria-label="View URBVO export loading">
+          <img src="images/manufacturing-container-loading.jpg" alt="Forklift loading coating pallets into an export container" loading="lazy">
+          <span class="factory-panel-index">04</span>
+          <span class="factory-panel-copy"><small>Export</small><h3>Global Shipment</h3><p>Palletized orders, export documentation and loading support.</p></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="quality-rail" id="quality" aria-label="Quality and compliance capabilities">
+      <div class="quality-rail-item"><strong>ISO 9001</strong><span>Quality management</span></div>
+      <div class="quality-rail-item"><strong>TDS / SDS</strong><span>Technical documentation</span></div>
+      <div class="quality-rail-item"><strong>Batch Testing</strong><span>Checked before release</span></div>
+      <div class="quality-rail-item"><strong>Color Control</strong><span>Instrument matching</span></div>
+      <div class="quality-rail-item"><strong>Performance</strong><span>Application testing</span></div>
+      <div class="quality-rail-item"><strong>Export Docs</strong><span>COA · MSDS · packing list</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. SYSTEMS ========== -->
+<section class="systems" id="systems">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Professional Flooring System</div>
+      <h2>Systems By Chemistry &amp; Classification</h2>
+      <p>While all resinous flooring systems are durable, each type has unique strengths and characteristics that may make one a better choice for your specific application. We have our systems segmented by the following classifications:</p>
+    </div>
+
+    <div class="system-grid">
+
+      <!-- System 1: Acrylic -->
+      <a class="system-card" href="professional-acrylic-floor-systems.html" aria-label="Explore Acrylic Floor Systems">
+        <div class="system-img">
+          <img src="images/system-acrylic.jpg" alt="Red and blue acrylic pickleball court flooring inside a workshop" loading="lazy">
+        </div>
+        <div class="system-body">
+          <h3>Acrylic Floor System</h3>
+        </div>
+      </a>
+
+      <!-- System 2: Epoxy -->
+      <a class="system-card" href="professional-epoxy-floor-systems.html" aria-label="Explore Epoxy Floor Systems">
+        <div class="system-img">
+          <img src="images/system-epoxy.jpg" alt="Glossy green epoxy walkway with yellow safety borders in a factory" loading="lazy">
+        </div>
+        <div class="system-body">
+          <h3>Epoxy Floor System</h3>
+        </div>
+      </a>
+
+      <!-- System 3: Polyurethane -->
+      <a class="system-card" href="professional-polyurethane-floor-systems.html" aria-label="Explore Polyurethane Floor Systems">
+        <div class="system-img">
+          <img src="images/system-polyurethane.jpg" alt="Glossy polyurethane factory floor with a yellow safety line" loading="lazy">
+        </div>
+        <div class="system-body">
+          <h3>Polyurethane Floor System</h3>
+        </div>
+      </a>
+
+      <!-- System 4: Cementitious Urethane -->
+      <a class="system-card" href="professional-cementitious-urethane-systems.html" aria-label="Explore Cementitious Urethane Systems">
+        <div class="system-img">
+          <img src="images/system-cementitious-urethane.jpg" alt="Hygienic cementitious urethane floor with drainage and stainless steel processing equipment" loading="lazy">
+        </div>
+        <div class="system-body">
+          <h3>Cementitious Urethane System</h3>
+        </div>
+      </a>
+
+      <!-- System 5: Waterproofing & Thermal Insulation -->
+      <a class="system-card" href="professional-waterproofing-thermal-insulation-systems.html" aria-label="Explore Waterproofing and Thermal Insulation Systems">
+        <div class="system-img">
+          <img src="images/system-moisture-mitigation.jpg" alt="Finished gray roof coating system with surrounding buildings and skyline" loading="lazy">
+        </div>
+        <div class="system-body">
+          <h3>Waterproofing &amp; Thermal Insulation</h3>
+        </div>
+      </a>
+
+      <!-- Not Sure CTA -->
+      <div class="system-card" style="background:var(--primary);color:#fff;justify-content:center;align-items:flex-start;padding:2rem;">
+        <div class="eyebrow" style="color:var(--accent);">Not Sure?</div>
+        <h3 style="color:#fff;font-size:1.4rem;margin-bottom:0.8rem;">Tell us your substrate, traffic and chemicals — we'll match the right system.</h3>
+        <p style="color:rgba(255,255,255,0.75);font-size:0.9rem;margin-bottom:1.5rem;">Our technical team responds within 24 hours with a tailored system recommendation and indicative pricing.</p>
+        <a href="#contact" class="link-arrow">Ask our technical team →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. DISTRIBUTOR / EASY-TO-USE PRODUCTS ========== -->
+<section class="distributor" id="products">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Made to Sell Easily</div>
+        <h2>Simple products.<br>Ready for your market.</h2>
+      </div>
+      <p>Application-friendly coatings with clear benefits, practical packaging and flexible private-label/OEM support for distributors and retail channels.</p>
+    </div>
+
+    <div class="dist-grid">
+
+      <a class="dist-card" href="retail-products.html#floor-coatings">
+        <div class="dist-can"><img src="images/category-floor-coatings.jpg" alt="Decorative floor coating in a modern garage" loading="lazy"><span class="dist-can-tag">CATEGORY 01</span></div>
+        <div class="dist-label">Flooring</div>
+        <h3>Floor Coatings &amp; Finishes</h3>
+        <p>Coatings and decorative finishes for new or existing concrete floors in homes, garages, shops and outdoor spaces.</p>
+        <ul class="dist-features">
+          <li>Acrylic &amp; epoxy floor coatings</li>
+          <li>Color-sand &amp; metallic finishes</li>
+          <li>Decorative flakes, pigments &amp; topcoats</li>
+        </ul>
+        <span class="link-arrow">Explore products →</span>
+      </a>
+
+      <a class="dist-card" href="retail-products.html#concrete-repair">
+        <div class="dist-can"><img src="images/category-concrete-repair.jpg" alt="Concrete floor preparation and repair work" loading="lazy"><span class="dist-can-tag">CATEGORY 02</span></div>
+        <div class="dist-label">Substrate</div>
+        <h3>Concrete Prep &amp; Repair</h3>
+        <p>Preparation, leveling and repair products that create a sound base before flooring or other surface finishes.</p>
+        <ul class="dist-features">
+          <li>Self-leveling cement</li>
+          <li>Concrete repair mortar</li>
+          <li>Primers, cleaners &amp; crack repair</li>
+        </ul>
+        <span class="link-arrow">Explore products →</span>
+      </a>
+
+      <a class="dist-card" href="retail-products.html#waterproofing">
+        <div class="dist-can"><img src="images/category-waterproofing.jpg" alt="Liquid waterproof coating applied to a balcony" loading="lazy"><span class="dist-can-tag">CATEGORY 03</span></div>
+        <div class="dist-label">Waterproofing</div>
+        <h3>Waterproofing &amp; Leak Repair</h3>
+        <p>Easy-to-apply solutions for bathrooms, balconies, roofs, exterior details and everyday household leak repairs.</p>
+        <ul class="dist-features">
+          <li>Liquid waterproof coatings</li>
+          <li>Butyl repair tapes</li>
+          <li>Roof patching &amp; sealing products</li>
+        </ul>
+        <span class="link-arrow">Explore products →</span>
+      </a>
+
+      <a class="dist-card" href="retail-products.html#tile-wall-joint">
+        <div class="dist-can"><img src="images/category-tile-wall-joint.jpg" alt="Tile, wall and joint repair application" loading="lazy"><span class="dist-can-tag">CATEGORY 04</span></div>
+        <div class="dist-label">Repair</div>
+        <h3>Tile, Wall &amp; Joint Repair</h3>
+        <p>Practical repair and sealing products for tile joints, wall damage, concrete gaps and household maintenance.</p>
+        <ul class="dist-features">
+          <li>Epoxy grout</li>
+          <li>Floor joint sealants</li>
+          <li>Wall patch &amp; sealing putty</li>
+        </ul>
+        <span class="link-arrow">Explore products →</span>
+      </a>
+
+      <a class="dist-card" href="retail-products.html#specialty-coatings">
+        <div class="dist-can"><img src="images/category-specialty-coatings.jpg" alt="Frosted glass, finished wood and coated metal samples" loading="lazy"><span class="dist-can-tag">CATEGORY 05</span></div>
+        <div class="dist-label">Specialty</div>
+        <h3>Specialty Surface Coatings</h3>
+        <p>Purpose-made decorative and protective coatings for glass, wood, metal and other specialty surfaces.</p>
+        <ul class="dist-features">
+          <li>Frosted glass paint</li>
+          <li>Wood coatings &amp; clear finishes</li>
+          <li>Metal paint &amp; anti-rust primers</li>
+        </ul>
+        <span class="link-arrow">Explore products →</span>
+      </a>
+
+      <a class="dist-card" href="retail-products.html#resin-crafts">
+        <div class="dist-can"><img src="images/category-resin-crafts.jpg" alt="Clear epoxy resin casting and craft workspace" loading="lazy"><span class="dist-can-tag">CATEGORY 06</span></div>
+        <div class="dist-label">Art &amp; DIY</div>
+        <h3>Resin Casting &amp; Crafts</h3>
+        <p>Clear resin systems and creative materials for tables, molds, jewelry, decorative pieces and DIY projects.</p>
+        <ul class="dist-features">
+          <li>Clear casting &amp; tabletop resin</li>
+          <li>UV resin &amp; craft kits</li>
+          <li>Pigments, mica powders &amp; accessories</li>
+        </ul>
+        <span class="link-arrow">Explore products →</span>
+      </a>
+
+    </div>
+    <div class="retail-view-all">
+      <a href="retail-products.html" class="btn-retail-all">View All Retail Products →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7. CASES ========== -->
+<section class="cases" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Projects &amp; Partnerships</div>
+        <h2>Proof from the field and the market.</h2>
+      </div>
+      <div>
+        <p style="margin-bottom:1rem;">Explore completed flooring applications separately from distributor and private-label cooperation.</p>
+        <a href="cases.html" class="link-arrow">View all cases →</a>
+      </div>
+    </div>
+
+    <div class="case-group">
+      <div class="case-group-head"><h3>Engineering Projects</h3><p>Selected flooring applications in industrial, commercial and recreation environments.</p></div>
+      <div class="case-grid projects">
+      <a class="case-card" href="case-industrial-epoxy-flooring-germany.html" aria-label="View industrial epoxy flooring project in Germany">
+        <div class="case-img">
+          <span class="case-tag">PROJECT</span>
+          <img src="images/cases/germany-automotive-epoxy-floor-1.jpg" alt="Industrial epoxy flooring in a German automotive parts factory" loading="lazy">
+        </div>
+        <div class="case-body">
+          <div class="case-loc">GERMANY · 2,400 m²</div>
+          <h4>Automotive Parts Factory</h4>
+          <div class="case-meta">
+            <span>Epoxy Floor System</span>
+            <span>15 Days</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="case-card" href="case-cementitious-urethane-dairy-usa.html" aria-label="View cementitious urethane dairy processing project in the USA">
+        <div class="case-img">
+          <span class="case-tag">PROJECT</span>
+          <img src="images/cases/usa-dairy-cementitious-urethane-2.jpg" alt="Cementitious urethane flooring in a US dairy processing facility" loading="lazy">
+        </div>
+        <div class="case-body">
+          <div class="case-loc">USA · 1,200 m²</div>
+          <h4>Dairy Processing Plant</h4>
+          <div class="case-meta">
+            <span>Cementitious Urethane</span>
+            <span>21 Days</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="case-card" href="case-epoxy-flake-garage-canada.html" aria-label="View epoxy flake commercial flooring project in Canada">
+        <div class="case-img">
+          <span class="case-tag">03 — EPOXY FLAKES</span>
+          <img src="images/cases/canada-epoxy-flake-garage-1.jpg" alt="Completed epoxy flake commercial flooring in Canada" loading="lazy">
+        </div>
+        <div class="case-body">
+          <div class="case-loc">CANADA · 850 m²</div>
+          <h4>Commercial Flooring</h4>
+          <div class="case-meta">
+            <span>Epoxy Flake System · 12 Days</span>
+          </div>
+        </div>
+      </a>
+
+      <a class="case-card" href="case-acrylic-sports-court-spain.html" aria-label="View acrylic sports court project in Spain">
+        <div class="case-img">
+          <span class="case-tag">PROJECT</span>
+          <img src="images/cases/spain-acrylic-sports-court-2.jpg" alt="Blue and green acrylic sports court in Spain" loading="lazy">
+        </div>
+        <div class="case-body">
+          <div class="case-loc">SPAIN · 1,100 m²</div>
+          <h4>Community Sports Court</h4>
+          <div class="case-meta">
+            <span>Acrylic Floor System</span>
+            <span>10 Days</span>
+          </div>
+        </div>
+      </a>
+
+      </div>
+    </div>
+
+    <div class="case-group">
+      <div class="case-group-head"><h3>Distributor Partnerships</h3><p>Retail-ready products, private-label development and export supply support.</p></div>
+      <div class="case-grid partnerships">
+      <a class="case-card" href="case-home-flooring-retail-partner-usa.html" aria-label="View home flooring retail distributor partnership in the USA">
+        <div class="case-img">
+          <span class="case-tag">DISTRIBUTOR PARTNERSHIP</span>
+          <img src="images/cases/usa-home-flooring-retail-store.jpg" alt="URBVO epoxy color-sand floor coating displayed by a USA retail partner" loading="lazy">
+        </div>
+        <div class="case-body">
+          <div class="case-loc">USA · HOME FLOORING RETAIL</div>
+          <h4>Home Flooring Retail Partner</h4>
+          <div class="case-meta"><span>Private Label Product Line</span></div>
+        </div>
+      </a>
+
+      <a class="case-card" href="case-waterproof-coating-distributor-vietnam.html" aria-label="View waterproof coating distribution partnership in Vietnam">
+        <div class="case-img">
+          <span class="case-tag">DISTRIBUTION</span>
+          <img src="images/cases/vietnam-waterproof-distribution-1.jpg" alt="Container shipment for a waterproof coating distributor in Vietnam" loading="lazy">
+        </div>
+        <div class="case-body">
+          <div class="case-loc">VIETNAM · LOCAL STORES</div>
+          <h4>Building Material Distribution Network</h4>
+          <div class="case-meta">
+            <span>Waterproof Coating</span>
+            <span>Local Stores</span>
+          </div>
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 8. CONTACT / FORM ========== -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="eyebrow">Start the Conversation</div>
+      <h2>Tell us what you need to coat.</h2>
+      <p class="lead">Contractors can submit project conditions for a tailored system recommendation. Distributors can request product samples, pricing and private-label information.</p>
+      <div style="margin-top:2rem;padding:1.2rem 1.5rem;border-left:3px solid var(--accent);background:rgba(255,255,255,0.05);">
+        <div style="font-weight:700;color:#fff;margin-bottom:0.3rem;">Technical response within 24 hours</div>
+        <div style="font-size:0.85rem;opacity:0.8;">Mon–Fri, 09:00–18:00 (GMT+8)</div>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Demo form — connect to Web3Forms in production.');">
+      <div class="form-group">
+        <label>Your customer type</label>
+        <select required>
+          <option value="">Select one</option>
+          <option>Contractor / Project buyer</option>
+          <option>Distributor / Wholesaler</option>
+          <option>Brand owner (OEM/ODM)</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label>Business email</label>
+          <input type="email" placeholder="name@company.com" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" placeholder="Country" required>
+        </div>
+        <div class="form-group">
+          <label>Interested in</label>
+          <select>
+            <option>Select a system or product</option>
+            <option>Acrylic Floor System</option>
+            <option>Epoxy Floor System</option>
+            <option>Polyurethane Floor System</option>
+            <option>Cementitious Urethane System</option>
+            <option>Waterproofing &amp; Thermal Insulation</option>
+            <option>Home Acrylic Floor Paint</option>
+            <option>Sport Court Acrylic Coating</option>
+            <option>Epoxy Color-Sand Floor Coating</option>
+            <option>Floor Joint Sealant</option>
+            <option>Epoxy Grout</option>
+            <option>Waterproof Coating</option>
+            <option>Clear Epoxy Resin</option>
+            <option>OEM / Private Label</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Project or purchasing requirements</label>
+        <textarea placeholder="Area, substrate, working conditions, expected quantity or OEM requirements"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer"><div class="container"><div class="site-footer-grid"><div class="site-footer-brand"><img src="images/urbvo-logo.png" alt="URBVO"><p>Professional coating systems and retail-ready products for project buyers, distributors and private-label partners.</p><div class="site-footer-contact"><strong>Start a conversation</strong><a href="index.html#contact">Send a project or distribution inquiry →</a></div></div><div><h4>Company</h4><a href="about-us.html">About Us</a><a href="manufacturing.html">Manufacturing</a><a href="certificates.html">Certificates</a><a href="blog.html">Blog</a></div><div><h4>Solutions</h4><a href="index.html#systems">Professional Systems</a><a href="retail-products.html">Retail &amp; Distribution</a><a href="cases.html">Projects &amp; Partnerships</a><a href="index.html#contact">OEM / Private Label</a></div><div><h4>Support</h4><a href="index.html#contact">Technical Support</a><a href="index.html#contact">Request Documents</a><a href="index.html#contact">Contact</a></div></div><div class="site-footer-bottom"><span>© 2026 URBVO · Yiwu Zhuangyu Technology Co., Ltd.</span><span>Technical files supplied on request</span></div></div></footer>
+
+
+
+</body>
+</html>
+
+
+

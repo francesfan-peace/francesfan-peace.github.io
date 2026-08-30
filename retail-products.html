@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail Products | URBVO Coatings</title>
+<meta name="description" content="Explore URBVO retail-ready coatings, waterproofing, repair products, specialty finishes, craft resins and application tools.">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+:root {
+  --primary:#1B2A4E; --primary-light:#2C3E6E; --accent:#E85D3C;
+  --accent-dark:#C84826; --bg:#F5F6F8; --cream:#F9F7F3;
+  --mid:#5A6478; --light:#8A93A6; --border:#E4E6EB;
+}
+body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; color:var(--primary); line-height:1.6; background:#fff; }
+a { color:inherit; text-decoration:none; }
+.container { max-width:1280px; margin:0 auto; padding:0 2rem; }
+.topbar { background:var(--primary); color:#fff; font-size:.85rem; padding:.6rem 0; }
+.topbar .container { display:flex; justify-content:space-between; gap:1rem; }
+.topbar-links { display:flex; gap:1.5rem; }
+nav { background:#fff; border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; }
+.nav-inner { min-height:76px; display:flex; align-items:center; justify-content:space-between; }
+.logo { display:flex; align-items:center; flex:0 0 auto; }
+.logo img { display:block; width:148px; height:auto; }
+.nav-links { display:flex; align-items:center; gap:1.65rem; font-size:.95rem; font-weight:500; }
+.nav-links a:hover { color:var(--accent); }
+.nav-cta { background:var(--accent); color:#fff!important; padding:.7rem 1.3rem; border-radius:4px; font-weight:700; }
+.catalog-hero { background:var(--primary); color:#fff; padding:5rem 0; position:relative; overflow:hidden; }
+.catalog-hero::after { content:''; position:absolute; inset:0 0 0 55%; background:url('images/category-floor-coatings.jpg') center/cover; opacity:.32; }
+.catalog-hero .container { position:relative; z-index:1; }
+.eyebrow { color:var(--accent); font-size:.8rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; margin-bottom:1rem; }
+h1 { color:#fff; font-size:clamp(2.5rem,5vw,4.2rem); line-height:1.06; letter-spacing:-.03em; max-width:760px; }
+.catalog-hero p { color:rgba(255,255,255,.8); font-size:1.08rem; max-width:650px; margin-top:1.4rem; }
+.catalog { background:var(--bg); padding:5rem 0 7rem; }
+.catalog-layout { display:grid; grid-template-columns:280px minmax(0,1fr); gap:3rem; align-items:start; }
+.catalog-main { min-width:0; grid-column:2; grid-row:1; }
+.catalog-sidebar { position:sticky; top:104px; grid-column:1; grid-row:1; background:#fff; border:1px solid var(--border); border-radius:7px; padding:1.4rem; box-shadow:0 8px 22px rgba(27,42,78,.06); }
+.sidebar-title { font-size:.72rem; color:var(--accent); font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:1rem; }
+.category-nav { display:flex; flex-direction:column; gap:.25rem; }
+.category-nav a { border-left:3px solid transparent; padding:.7rem .75rem; color:var(--mid); font-size:.88rem; font-weight:600; transition:.2s; }
+.category-nav a:hover,.category-nav a.active { color:var(--primary); background:var(--cream); border-left-color:var(--accent); }
+.category-section { margin-bottom:5rem; scroll-margin-top:110px; }
+.category-heading { display:grid; grid-template-columns:110px 1fr; gap:1.4rem; align-items:center; margin-bottom:1.5rem; }
+.category-heading img { width:110px; height:74px; object-fit:cover; border-radius:5px; }
+.category-number { color:var(--accent); font-size:.72rem; font-weight:800; letter-spacing:.14em; }
+.category-heading h2 { font-size:clamp(1.6rem,3vw,2.25rem); line-height:1.12; letter-spacing:-.02em; margin:.2rem 0; }
+.category-heading p { color:var(--mid); font-size:.92rem; }
+.product-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem; }
+.product-card { background:#fff; border:1px solid var(--border); border-radius:7px; padding:1.35rem; display:flex; gap:1.1rem; min-height:205px; transition:.2s; }
+.product-card:hover { border-color:var(--accent); transform:translateY(-3px); box-shadow:0 10px 24px rgba(27,42,78,.08); }
+.product-card.has-photo { display:block; padding:0; overflow:hidden; }
+.product-photo { height:230px; overflow:hidden; background:var(--cream); }
+.product-photo img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease; }
+.product-card.has-photo:hover .product-photo img { transform:scale(1.025); }
+.product-card.has-photo .product-info { padding:1.35rem; min-height:196px; }
+.product-visual { width:116px; min-width:116px; border-radius:5px; background:var(--cream); border:1px solid var(--border); display:flex; flex-direction:column; justify-content:space-between; padding:.7rem; overflow:hidden; }
+.product-type { color:var(--light); font-size:.58rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+.pack { width:48px; height:67px; margin:auto; border-radius:3px; background:linear-gradient(180deg,var(--primary) 0 72%,var(--accent) 72%); box-shadow:0 5px 10px rgba(27,42,78,.12); }
+.pack.bag { width:62px; height:76px; border-radius:5px 5px 3px 3px; background:linear-gradient(160deg,#fff 0 48%,var(--primary) 48% 78%,var(--accent) 78%); border:1px solid var(--border); }
+.pack.tube { width:34px; height:82px; border-radius:3px 3px 10px 10px; transform:rotate(8deg); }
+.pack.roll { width:72px; height:24px; border-radius:12px; background:linear-gradient(90deg,var(--primary) 0 70%,var(--accent) 70%); }
+.product-info { display:flex; flex-direction:column; min-width:0; }
+.product-label { color:var(--accent); font-size:.67rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.product-info h3 { font-size:1.12rem; line-height:1.2; margin:.35rem 0 .55rem; }
+.product-info p { color:var(--mid); font-size:.85rem; flex:1; }
+.product-link { color:var(--accent); font-size:.82rem; font-weight:700; border-bottom:1px solid var(--accent); align-self:flex-start; margin-top:.8rem; }
+.empty-category { background:#fff; border:1px dashed #C8CDD7; border-radius:7px; padding:2.5rem; text-align:center; color:var(--mid); }
+.empty-category strong { display:block; color:var(--primary); font-size:1.1rem; margin-bottom:.35rem; }
+.catalog-note { background:var(--primary); color:#fff; padding:2rem; border-radius:7px; margin-top:1.5rem; }
+.catalog-note h3 { font-size:1.3rem; margin-bottom:.5rem; }
+.catalog-note p { color:rgba(255,255,255,.75); font-size:.88rem; }
+.catalog-note a { display:inline-block; color:var(--accent); font-weight:700; margin-top:1rem; border-bottom:1px solid var(--accent); }
+footer { background:#0F1A33; color:rgba(255,255,255,.7); padding:3rem 0 1.5rem; }
+.footer-inner { display:flex; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
+.footer-brand { color:#fff; font-size:1.35rem; font-weight:800; }
+.footer-links { display:flex; gap:1.5rem; font-size:.88rem; }
+@media (max-width:980px) {
+  .nav-links { display:none; }
+  .catalog-layout { grid-template-columns:1fr; }
+  .catalog-sidebar { position:static; grid-column:1; grid-row:1; overflow:hidden; }
+  .catalog-main { grid-column:1; grid-row:2; }
+  .category-nav { flex-direction:row; overflow-x:auto; padding-bottom:.35rem; }
+  .category-nav a { flex:0 0 auto; border-left:0; border-bottom:3px solid transparent; }
+  .category-nav a:hover,.category-nav a.active { border-left:0; border-bottom-color:var(--accent); }
+}
+@media (max-width:680px) {
+  .container { padding:0 1.2rem; }
+  .topbar-links { display:none; }
+  .catalog-hero { padding:4rem 0; }
+  .catalog-hero::after { inset:0; opacity:.16; }
+  .product-grid { grid-template-columns:1fr; }
+  .product-card { min-height:190px; }
+  .product-photo { height:210px; }
+  .product-visual { width:96px; min-width:96px; }
+  .category-heading { grid-template-columns:84px 1fr; }
+  .category-heading img { width:84px; height:68px; }
+}
+</style>
+<link rel="stylesheet" href="site-shared.css">
+</head>
+<body>
+<div class="topbar"><div class="container"><span>Direct Coating Manufacturer · Est. 2005</span><div class="topbar-links"><a href="index.html#contact">OEM / ODM</a><a href="index.html#contact">Technical Support</a><a href="index.html#contact">Global Supply</a></div></div></div>
+<nav><div class="container nav-inner"><a href="index.html" class="logo" aria-label="URBVO home"><img src="images/urbvo-logo.png" alt="URBVO"></a><div class="nav-links"><a href="index.html">Home</a><div class="nav-dropdown"><a href="about-us.html">About Us</a><div class="nav-submenu"><a href="about-us.html">Company Overview</a><a href="manufacturing.html">Manufacturing</a><a href="blog.html">Blog</a><a href="certificates.html">Certificates</a></div></div><a href="index.html#systems">Professional Systems</a><a href="retail-products.html">Retail &amp; Distribution</a><a href="index.html#projects">Projects</a><a href="index.html#contact" class="nav-cta">Get a Solution</a></div></div></nav>
+
+<header class="catalog-hero"><div class="container"><div class="eyebrow">Made to Sell Easily</div><h1>Simple products.<br>Ready for your market.</h1><p>Application-friendly coatings with clear benefits, practical packaging and flexible private-label/OEM support for distributors and retail channels.</p></div></header>
+
+<main class="catalog" id="all-products"><div class="container catalog-layout">
+  <div class="catalog-main">
+    <section class="category-section" id="floor-coatings">
+      <div class="category-heading"><img src="images/category-floor-coatings.jpg" alt="Decorative floor coating"><div><div class="category-number">CATEGORY 01</div><h2>Floor Coatings &amp; Finishes</h2><p>Protective and decorative finishes for new and existing concrete floors.</p></div></div>
+      <div class="product-grid">
+        <a class="product-card has-photo" href="retail-product.html?id=acrylic-floor-paint"><div class="product-photo"><img src="images/product-acrylic-floor-paint.jpg" alt="URBVO acrylic floor paint for a home courtyard" loading="lazy"></div><div class="product-info"><span class="product-label">Floor Paint</span><h3>Acrylic Floor Paint</h3><p>Easy-to-apply water-based coating for garages, basements, workshops and selected outdoor floors.</p><span class="product-link">View product →</span></div></a>
+        <a class="product-card has-photo" href="retail-product.html?id=epoxy-color-sand-floor-coating"><div class="product-photo"><img src="images/product-epoxy-color-sand-floor-coating.jpg" alt="URBVO 2K epoxy color-sand floor coating for garages" loading="lazy"></div><div class="product-info"><span class="product-label">Decorative Epoxy</span><h3>Epoxy Color-Sand Floor Coating</h3><p>Seamless decorative epoxy finish using colored quartz sand for premium interior floors.</p><span class="product-link">View product →</span></div></a>
+        <a class="product-card has-photo" href="retail-product.html?id=decorative-color-flakes"><div class="product-photo"><img src="images/product-decorative-color-flakes.jpg" alt="Transparent bag of decorative color flakes" loading="lazy"></div><div class="product-info"><span class="product-label">Decorative Effect</span><h3>Decorative Color Flakes</h3><p>Broadcast flakes for customized color, texture and visual depth in resinous flooring systems.</p><span class="product-link">View product →</span></div></a>
+      </div>
+    </section>
+
+    <section class="category-section" id="concrete-repair">
+      <div class="category-heading"><img src="images/category-concrete-repair.jpg" alt="Concrete preparation and repair"><div><div class="category-number">CATEGORY 02</div><h2>Concrete Prep &amp; Repair</h2><p>Leveling and repair products that create a sound base for subsequent finishes.</p></div></div>
+      <div class="product-grid">
+        <a class="product-card has-photo" href="retail-product.html?id=self-leveling-cement"><div class="product-photo"><img src="images/product-self-leveling-cement.jpg" alt="URBVO self-leveling cement and smooth floor application" loading="lazy"></div><div class="product-info"><span class="product-label">Floor Leveling</span><h3>Self-Leveling Cement</h3><p>Flowable cementitious underlayment for producing smooth, level interior substrates.</p><span class="product-link">View product →</span></div></a>
+        <a class="product-card has-photo" href="retail-product.html?id=cement-repair-mortar"><div class="product-photo"><img src="images/product-cement-repair-mortar.jpg" alt="URBVO cement repair mortar and repaired concrete step" loading="lazy"></div><div class="product-info"><span class="product-label">Concrete Repair</span><h3>Cement Repair Mortar</h3><p>Easy-mix repair mortar for cracks, holes, spalled concrete, steps and masonry surfaces.</p><span class="product-link">View product →</span></div></a>
+      </div>
+    </section>
+
+    <section class="category-section" id="waterproofing">
+      <div class="category-heading"><img src="images/category-waterproofing.jpg" alt="Waterproofing application"><div><div class="category-number">CATEGORY 03</div><h2>Waterproofing &amp; Leak Repair</h2><p>Liquid membranes, tapes and sealing materials for common water-ingress problems.</p></div></div>
+      <div class="product-grid">
+        <a class="product-card has-photo" href="retail-product.html?id=waterproof-coating"><div class="product-photo"><img src="images/product-waterproof-coating.jpg" alt="URBVO waterproof coating on a roof terrace" loading="lazy"></div><div class="product-info"><span class="product-label">Waterproofing</span><h3>Waterproof Coating</h3><p>Ready-to-use liquid coating for bathrooms, balconies, roofs and household repairs.</p><span class="product-link">View product →</span></div></a>
+        <a class="product-card has-photo" href="retail-product.html?id=butyl-waterproof-tape"><div class="product-photo"><img src="images/product-butyl-waterproof-tape.jpg" alt="URBVO butyl waterproof tape sealing a roof gutter" loading="lazy"></div><div class="product-info"><span class="product-label">Leak Repair</span><h3>Butyl Waterproof Tape</h3><p>Flexible self-adhesive sealing tape for roofs, gutters, flashing, pipes and emergency repairs.</p><span class="product-link">View product →</span></div></a>
+        <a class="product-card has-photo" href="retail-product.html?id=sealing-mastic"><div class="product-photo"><img src="images/product-sealing-mastic.jpg" alt="URBVO sealing mastic around a pipe penetration" loading="lazy"></div><div class="product-info"><span class="product-label">Sealing</span><h3>Sealing Mastic</h3><p>Moldable sealing material for gaps, penetrations and localized waterproof repair details.</p><span class="product-link">View product →</span></div></a>
+      </div>
+    </section>
+
+    <section class="category-section" id="tile-wall-joint">
+      <div class="category-heading"><img src="images/category-tile-wall-joint.jpg" alt="Tile and joint repair"><div><div class="category-number">CATEGORY 04</div><h2>Tile, Wall &amp; Joint Repair</h2><p>Consumer-friendly solutions for grout, cracks, gaps and damaged wall surfaces.</p></div></div>
+      <div class="product-grid">
+        <a class="product-card has-photo" href="retail-product.html?id=epoxy-grout"><div class="product-photo"><img src="images/product-epoxy-grout.jpg" alt="URBVO 2K epoxy grout and finished bathroom tile joints" loading="lazy"></div><div class="product-info"><span class="product-label">Tile &amp; Stone</span><h3>Epoxy Grout</h3><p>Waterproof, stain-resistant two-component grout for kitchens, bathrooms and pools.</p><span class="product-link">View product →</span></div></a>
+        <a class="product-card has-photo" href="retail-product.html?id=floor-joint-sealant"><div class="product-photo"><img src="images/product-floor-joint-sealant.jpg" alt="URBVO floor joint sealant and warehouse expansion joint" loading="lazy"></div><div class="product-info"><span class="product-label">Joint Repair</span><h3>Floor Joint Sealant</h3><p>Self-leveling flexible sealant for concrete floor cracks and horizontal expansion joints.</p><span class="product-link">View product →</span></div></a>
+        <a class="product-card has-photo" href="retail-product.html?id=wall-repair-paste"><div class="product-photo"><img src="images/product-wall-repair-paste.jpg" alt="URBVO wall repair paste and repaired interior wall" loading="lazy"></div><div class="product-info"><span class="product-label">Wall Repair</span><h3>Wall Repair Paste</h3><p>Ready-to-use filler for nail holes, fine cracks and small damaged areas on interior walls.</p><span class="product-link">View product →</span></div></a>
+      </div>
+    </section>
+
+    <section class="category-section" id="specialty-coatings">
+      <div class="category-heading"><img src="images/category-specialty-coatings.jpg" alt="Specialty coated surfaces"><div><div class="category-number">CATEGORY 05</div><h2>Specialty Surface Coatings</h2><p>Decorative and protective finishes formulated for specific substrates.</p></div></div>
+      <div class="product-grid">
+        <a class="product-card has-photo" href="retail-product.html?id=frosted-glass-paint"><div class="product-photo"><img src="images/product-frosted-glass-paint.jpg" alt="URBVO frosted glass paint and privacy glass finish" loading="lazy"></div><div class="product-info"><span class="product-label">Glass</span><h3>Frosted Glass Paint</h3><p>Decorative translucent finish that adds privacy to windows, partitions and glass panels.</p><span class="product-link">View product →</span></div></a>
+        <a class="product-card has-photo" href="retail-product.html?id=wood-coating"><div class="product-photo"><img src="images/product-wood-coating.jpg" alt="URBVO wood coating and finished oak furniture" loading="lazy"></div><div class="product-info"><span class="product-label">Wood</span><h3>Wood Coating</h3><p>Protective decorative finish for furniture, doors, trim and other interior wood surfaces.</p><span class="product-link">View product →</span></div></a>
+        <a class="product-card has-photo" href="retail-product.html?id=metal-paint"><div class="product-photo"><img src="images/product-metal-paint.jpg" alt="URBVO metal paint and coated outdoor gate" loading="lazy"></div><div class="product-info"><span class="product-label">Metal</span><h3>Metal Paint</h3><p>Durable protective coating for gates, railings, equipment and household metal surfaces.</p><span class="product-link">View product →</span></div></a>
+      </div>
+    </section>
+
+    <section class="category-section" id="resin-crafts">
+      <div class="category-heading"><img src="images/category-resin-crafts.jpg" alt="Epoxy resin craft workspace"><div><div class="category-number">CATEGORY 06</div><h2>Resin Casting &amp; Crafts</h2><p>Clear resin materials for casting, tabletop projects, molds and creative work.</p></div></div>
+      <div class="product-grid">
+        <a class="product-card has-photo" href="retail-product.html?id=diy-epoxy-resin"><div class="product-photo"><img src="images/product-diy-epoxy-resin.jpg" alt="URBVO 2K DIY epoxy resin and finished resin craft" loading="lazy"></div><div class="product-info"><span class="product-label">Art &amp; DIY</span><h3>DIY Epoxy Resin</h3><p>High-clarity two-component resin for tabletops, molds, jewelry and decorative projects.</p><span class="product-link">View product →</span></div></a>
+      </div>
+    </section>
+
+    <section class="category-section" id="tools">
+      <div class="category-heading"><img src="images/product-wall-paint-roller.jpg" alt="URBVO wall paint roller set"><div><div class="category-number">CATEGORY 07</div><h2>Tools &amp; Accessories</h2><p>Application tools and practical accessories for easier project completion.</p></div></div>
+      <div class="product-grid">
+        <a class="product-card has-photo" href="retail-product.html?id=wall-paint-roller"><div class="product-photo"><img src="images/product-wall-paint-roller.jpg" alt="URBVO wall paint roller set in a home interior" loading="lazy"></div><div class="product-info"><span class="product-label">Painting Tool</span><h3>Wall Paint Roller</h3><p>Reliable roller applicator for smooth, even coverage on interior and exterior wall projects.</p><span class="product-link">View product →</span></div></a>
+      </div>
+    </section>
+
+    <section class="category-section" id="other">
+      <div class="category-heading"><div class="product-visual" style="width:110px;height:74px;min-width:110px;"><span class="pack"></span></div><div><div class="category-number">CATEGORY 08</div><h2>Other Retail Products</h2><p>Additional retail-ready product lines will be added as the range expands.</p></div></div>
+      <div class="empty-category"><strong>More products coming soon</strong>New products that do not yet fit the main categories will appear here.</div>
+    </section>
+  </div>
+
+  <aside class="catalog-sidebar" aria-label="Retail product category navigation">
+    <div class="sidebar-title">All Product Categories</div>
+    <div class="category-nav">
+      <a href="#floor-coatings">01 · Floor Coatings &amp; Finishes</a>
+      <a href="#concrete-repair">02 · Concrete Prep &amp; Repair</a>
+      <a href="#waterproofing">03 · Waterproofing &amp; Leak Repair</a>
+      <a href="#tile-wall-joint">04 · Tile, Wall &amp; Joint Repair</a>
+      <a href="#specialty-coatings">05 · Specialty Surface Coatings</a>
+      <a href="#resin-crafts">06 · Resin Casting &amp; Crafts</a>
+      <a href="#tools">07 · Tools &amp; Accessories</a>
+      <a href="#other">08 · Other</a>
+    </div>
+    <div class="catalog-note"><h3>Private Label &amp; OEM</h3><p>Packaging, colors and formulas can be adapted for your retail market.</p><a href="index.html#contact">Request OEM info →</a></div>
+  </aside>
+</div></main>
+
+<footer class="site-footer"><div class="container"><div class="site-footer-grid"><div class="site-footer-brand"><img src="images/urbvo-logo.png" alt="URBVO"><p>Professional coating systems and retail-ready products for project buyers, distributors and private-label partners.</p><div class="site-footer-contact"><strong>Start a conversation</strong><a href="index.html#contact">Send a project or distribution inquiry →</a></div></div><div><h4>Company</h4><a href="about-us.html">About Us</a><a href="manufacturing.html">Manufacturing</a><a href="certificates.html">Certificates</a><a href="blog.html">Blog</a></div><div><h4>Solutions</h4><a href="index.html#systems">Professional Systems</a><a href="retail-products.html">Retail &amp; Distribution</a><a href="cases.html">Projects &amp; Partnerships</a><a href="index.html#contact">OEM / Private Label</a></div><div><h4>Support</h4><a href="index.html#contact">Technical Support</a><a href="index.html#contact">Request Documents</a><a href="index.html#contact">Contact</a></div></div><div class="site-footer-bottom"><span>© 2026 URBVO · Yiwu Zhuangyu Technology Co., Ltd.</span><span>Technical files supplied on request</span></div></div></footer>
+<script>
+const sections=[...document.querySelectorAll('.category-section')];
+const links=[...document.querySelectorAll('.category-nav a')];
+const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){links.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+entry.target.id));}});},{rootMargin:'-20% 0px -65% 0px'});
+sections.forEach(section=>observer.observe(section));
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coating Manufacturing &amp; Private Label Factory | URBVO</title>
+<meta name="description" content="Explore URBVO's 15,000 m² coating factory, in-house formulation, batch testing, filling, packaging and OEM/ODM support for global distributors.">
+<meta name="keywords" content="coating manufacturer, private label floor coating, OEM coating factory, epoxy coating manufacturer, acrylic floor paint factory, URBVO">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #1B2A4E; line-height: 1.6; background: #fff;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+:root {
+  --primary: #1B2A4E; --primary-light: #2C3E6E; --accent: #E85D3C;
+  --accent-dark: #C84826; --bg-light: #F5F6F8; --bg-cream: #F9F7F3;
+  --text-mid: #5A6478; --text-light: #8A93A6; --border: #E4E6EB;
+}
+.container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+.eyebrow { color: var(--accent); font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; margin-bottom: .8rem; }
+h1, h2, h3, h4 { line-height: 1.14; color: var(--primary); }
+h1 { font-size: clamp(2.7rem, 6vw, 5.2rem); letter-spacing: -.035em; }
+h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.025em; }
+h3 { font-size: 1.35rem; }
+p { color: var(--text-mid); }
+section { padding: 5rem 0; }
+
+.topbar { background: var(--primary); color: #fff; font-size: .85rem; padding: .6rem 0; }
+.topbar .container { display: flex; justify-content: space-between; gap: 1rem; }
+.topbar-links { display: flex; gap: 1.5rem; }
+.topbar a:hover { color: #ff8265; }
+nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--border); }
+.nav-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; flex: 0 0 auto; }
+.logo img { display: block; width: 148px; height: auto; }
+.nav-links { display: flex; align-items: center; gap: 1.65rem; font-size: .95rem; font-weight: 600; }
+.nav-links a:hover { color: var(--accent); }
+.nav-links a[aria-current="page"] { color: var(--accent); }
+.nav-cta { padding: .72rem 1.3rem; color: #fff !important; background: var(--accent); border-radius: 4px; }
+
+.hero { min-height: 540px; padding: 0; display: flex; align-items: end; position: relative; overflow: hidden; background: var(--primary); }
+.hero::before { content: ""; position: absolute; inset: 0; background: url("images/manufacturing-finished-goods-overview.jpg") center 52% / cover no-repeat; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,18,42,.88) 0%, rgba(15,31,64,.66) 48%, rgba(15,31,64,.14) 100%); }
+.hero-content { position: relative; z-index: 1; max-width: 790px; padding: 5rem 0 4.5rem; }
+.hero h1, .hero p { color: #fff; }
+.hero p { max-width: 680px; margin-top: 1.5rem; font-size: 1.12rem; color: rgba(255,255,255,.86); }
+.hero-actions { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: .8rem 1.5rem; border: 2px solid #fff; border-radius: 4px; font-weight: 700; }
+.btn-primary { border-color: var(--accent); background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.btn-secondary { color: #fff; background: rgba(255,255,255,.06); }
+.btn-secondary:hover { background: #fff; color: var(--primary); }
+
+.fact-strip { background: var(--primary); color: #fff; padding: 0; }
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); }
+.fact { padding: 1.4rem 2rem; border-right: 1px solid rgba(255,255,255,.16); }
+.fact:first-child { border-left: 1px solid rgba(255,255,255,.16); }
+.fact strong { display: block; font-size: 1.65rem; line-height: 1.1; }
+.fact span { color: rgba(255,255,255,.68); font-size: .82rem; }
+
+.factory-video { padding: 4.5rem 0; background: #111D38; }
+.factory-video-grid { display: grid; grid-template-columns: .62fr 1.38fr; gap: 3rem; align-items: center; }
+.factory-video-copy h2 { color: #fff; font-size: clamp(2.1rem, 4vw, 3.25rem); margin-top: .65rem; }
+.factory-video-copy p { color: rgba(255,255,255,.72); margin-top: 1.2rem; max-width: 460px; }
+.video-link { display: inline-block; margin-top: 1.4rem; color: #FF8061; font-weight: 800; border-bottom: 1px solid #FF8061; }
+.video-frame { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid rgba(255,255,255,.18); border-radius: 8px; background: #050A14; box-shadow: 0 24px 55px rgba(0,0,0,.3); }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-fallback { position: absolute; inset: 0; display: grid; place-items: center; color: #fff; background: linear-gradient(rgba(7,15,33,.08),rgba(7,15,33,.28)), url("images/manufacturing-factory-video-cover.jpg") center / cover no-repeat; }
+.video-fallback-content { display: grid; justify-items: center; gap: .8rem; text-align: center; padding: 1.25rem; }
+.video-play { width: 72px; height: 72px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); box-shadow: 0 12px 30px rgba(0,0,0,.3); transition: transform .2s, background .2s; }
+.video-play::before { content: ""; width: 0; height: 0; margin-left: 5px; border-top: 11px solid transparent; border-bottom: 11px solid transparent; border-left: 17px solid #fff; }
+.video-fallback:hover .video-play { transform: scale(1.08); background: var(--accent-dark); }
+.video-fallback strong { font-size: 1.05rem; }
+.video-fallback span:last-child { color: rgba(255,255,255,.72); font-size: .8rem; }
+
+.factory-gallery { background: var(--bg-light); padding: 4.5rem 0; }
+.section-head { display: grid; grid-template-columns: 1fr .8fr; gap: 3rem; align-items: end; margin-bottom: 2.4rem; }
+.factory-slider { position: relative; }
+.slider-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.slider-count { color: var(--primary); font-size: .84rem; font-weight: 800; letter-spacing: .1em; }
+.slider-actions { display: flex; gap: .65rem; }
+.slider-button { width: 46px; height: 46px; border: 1px solid var(--primary); border-radius: 50%; background: transparent; color: var(--primary); font-size: 1.45rem; cursor: pointer; transition: color .2s, background .2s, border-color .2s; }
+.slider-button:hover { color: #fff; background: var(--accent); border-color: var(--accent); }
+.slider-button:focus-visible, .slider-dot:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.slider-viewport { overflow: hidden; touch-action: pan-y; }
+.slider-track { display: flex; gap: 1rem; transition: transform .45s cubic-bezier(.22,.8,.25,1); will-change: transform; }
+.portrait-card { position: relative; flex: 0 0 calc((100% - 2rem) / 3); aspect-ratio: 9 / 13.6; overflow: hidden; border-radius: 7px; background: #111D38; isolation: isolate; scroll-margin-top: 100px; }
+.portrait-card img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform .5s ease; }
+.portrait-card:hover img { transform: scale(1.025); }
+.portrait-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,18,42,.03) 38%, rgba(8,18,42,.9) 100%); pointer-events: none; }
+.portrait-badge { position: absolute; z-index: 2; top: 1rem; left: 1rem; padding: .32rem .62rem; color: #fff; background: var(--accent); font-size: .67rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.portrait-caption { position: absolute; z-index: 2; left: 1.25rem; right: 1.25rem; bottom: 1.25rem; color: #fff; }
+.portrait-caption h3 { color: #fff; margin-bottom: .4rem; font-size: clamp(1.15rem, 1.8vw, 1.45rem); }
+.portrait-caption p { color: rgba(255,255,255,.76); font-size: .84rem; line-height: 1.45; }
+.slider-dots { display: flex; justify-content: center; flex-wrap: wrap; gap: .55rem; margin-top: 1.3rem; }
+.slider-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; background: #C8CDD7; cursor: pointer; transition: width .2s, border-radius .2s, background .2s; }
+.slider-dot.is-active { width: 26px; border-radius: 8px; background: var(--accent); }
+.slider-note { margin-top: .8rem; color: var(--text-light); font-size: .84rem; text-align: center; }
+
+.process-section { padding: 4rem 0; }
+.process-head { display: grid; grid-template-columns: 1fr .75fr; gap: 3rem; align-items: end; }
+.process-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: .75rem; margin-top: 2rem; }
+.process-card { min-height: 138px; padding: 1.15rem; border: 1px solid var(--border); border-top: 3px solid var(--primary); background: #fff; }
+.process-card:last-child { border-top-color: var(--accent); }
+.process-num { color: var(--accent); font-size: .75rem; font-weight: 800; letter-spacing: .15em; }
+.process-card h3 { margin: .5rem 0 .35rem; font-size: 1rem; }
+.process-card p { font-size: .78rem; line-height: 1.4; }
+
+.cta { padding: 3.5rem 0; background: var(--primary); }
+.cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.cta h2, .cta p { color: #fff; }
+.cta p { color: rgba(255,255,255,.72); margin-top: .7rem; }
+
+footer { padding: 2.5rem 0; background: #111D38; color: #fff; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 2rem; }
+.footer-inner p { color: rgba(255,255,255,.65); font-size: .85rem; }
+.footer-links { display: flex; gap: 1.5rem; font-size: .88rem; }
+.footer-links a:hover { color: #ff8061; }
+.footer-brand { color: #fff; font-size: 1.4rem; font-weight: 800; letter-spacing: .03em; }
+
+@media (max-width: 1100px) {
+  .process-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .facts { grid-template-columns: repeat(2, 1fr); }
+  .section-head, .process-head, .factory-video-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .portrait-card { flex-basis: calc((100% - 1rem) / 2); }
+}
+@media (max-width: 560px) {
+  .container { padding: 0 1.25rem; }
+  section { padding: 3.8rem 0; }
+  .topbar-links { display: none; }
+  .hero { min-height: 540px; }
+  .hero::before { background-position: 58% center; }
+  .hero-content { padding: 4rem 0 3.5rem; }
+  .hero-actions, .btn { width: 100%; }
+  .facts, .process-grid { grid-template-columns: 1fr; }
+  .fact, .fact:first-child { border-left: 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+  .slider-button { width: 42px; height: 42px; }
+  .portrait-card { flex-basis: 100%; aspect-ratio: 9 / 13.6; }
+  .portrait-caption p { font-size: .8rem; }
+  .cta-inner, .footer-inner { align-items: flex-start; flex-direction: column; }
+  .footer-links { flex-wrap: wrap; }
+}
+</style>
+<link rel="stylesheet" href="site-shared.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>Direct Coating Manufacturer · Est. 2005</span>
+    <div class="topbar-links">
+      <a href="index.html#contact">OEM / ODM</a>
+      <a href="index.html#contact">Technical Support</a>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="index.html" aria-label="URBVO home"><img src="images/urbvo-logo.png" alt="URBVO"></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown"><a href="about-us.html" aria-current="page">About Us</a><div class="nav-submenu"><a href="about-us.html">Company Overview</a><a href="manufacturing.html" aria-current="page">Manufacturing</a><a href="blog.html">Blog</a><a href="certificates.html">Certificates</a></div></div>
+      <a href="index.html#systems">Professional Systems</a>
+      <a href="retail-products.html">Retail &amp; Distribution</a>
+      <a href="cases.html">Projects</a>
+      <a class="nav-cta" href="index.html#contact">Get a Solution</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">URBVO Manufacturing</div>
+        <h1>From formula to shipment, managed in-house.</h1>
+        <p>Explore how URBVO develops, tests, manufactures and packs professional coating systems and retail-ready products for contractors, distributors and private-label partners.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#factory-video">Watch Factory Video</a>
+          <a class="btn btn-secondary" href="#factory-gallery">View Factory Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="fact-strip" aria-label="Factory facts">
+    <div class="container facts">
+      <div class="fact"><strong>15,000 m²</strong><span>Manufacturing facility</span></div>
+      <div class="fact"><strong>Since 2005</strong><span>Coating production experience</span></div>
+      <div class="fact"><strong>In-house</strong><span>Formulation and batch testing</span></div>
+      <div class="fact"><strong>OEM / ODM</strong><span>Packaging and market support</span></div>
+    </div>
+  </div>
+
+  <section class="factory-video" id="factory-video">
+    <div class="container factory-video-grid">
+      <div class="factory-video-copy">
+        <div class="eyebrow">Factory Video</div>
+        <h2>See the facility behind every shipment.</h2>
+        <p>Take a closer look at URBVO’s production environment, manufacturing scale and the team supporting coating systems, retail products and international orders.</p>
+        <a class="video-link" href="https://youtu.be/BsXgX7mrEXM" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+      </div>
+      <div class="video-frame">
+        <a class="video-fallback" href="https://youtu.be/BsXgX7mrEXM" target="_blank" rel="noopener noreferrer" data-video-launch aria-label="Play the URBVO factory video">
+          <span class="video-fallback-content"><span class="video-play" aria-hidden="true"></span><strong>Play Factory Video</strong><span>Opens on YouTube during local preview</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="factory-gallery" id="factory-gallery">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Inside The Facility</div>
+          <h2>A closer look at how your products are made.</h2>
+        </div>
+        <p>Production, quality control, packaging support and export preparation are coordinated under one roof for consistent products and a clearer supply chain.</p>
+      </div>
+      <div class="factory-slider" data-factory-slider aria-label="URBVO manufacturing photo gallery">
+        <div class="slider-toolbar">
+          <div class="slider-count" aria-live="polite"><span data-slider-current>01–03</span> / <span data-slider-total>10</span></div>
+          <div class="slider-actions">
+            <button class="slider-button" type="button" data-slider-prev aria-label="Previous factory photos">‹</button>
+            <button class="slider-button" type="button" data-slider-next aria-label="Next factory photos">›</button>
+          </div>
+        </div>
+        <div class="slider-viewport">
+          <div class="slider-track" data-slider-track>
+            <figure class="portrait-card" id="production" data-slide>
+              <img src="images/manufacturing-workshop-overview-vertical.jpg" alt="Overview of the URBVO coating production workshop" loading="eager">
+              <span class="portrait-badge">Factory</span>
+              <figcaption class="portrait-caption"><h3>Production workshop</h3><p>A clear view across the manufacturing floor, mixing vessels and material handling areas.</p></figcaption>
+            </figure>
+            <figure class="portrait-card" id="production-mixing" data-slide>
+              <img src="images/manufacturing-mixing-process.jpg" alt="Coating material being mixed in a production vessel" loading="eager">
+              <span class="portrait-badge">Production</span>
+              <figcaption class="portrait-caption"><h3>Controlled batch mixing</h3><p>Materials are dispersed and mixed to the agreed formula and production specification.</p></figcaption>
+            </figure>
+            <figure class="portrait-card" id="packing" data-slide>
+              <img src="images/manufacturing-packing-wrap.jpg" alt="URBVO coating buckets being stretch wrapped on pallets" loading="eager">
+              <span class="portrait-badge">Packing</span>
+              <figcaption class="portrait-caption"><h3>Secure pallet wrapping</h3><p>Finished products are grouped and protected for warehouse handling and onward shipment.</p></figcaption>
+            </figure>
+            <figure class="portrait-card" id="laboratory" data-slide>
+              <img src="images/manufacturing-sample-drawdown.jpg" alt="Coating sample being applied to a test card in the URBVO laboratory" loading="lazy">
+              <span class="portrait-badge">Laboratory</span>
+              <figcaption class="portrait-caption"><h3>Sample drawdown</h3><p>Coating samples are applied consistently for visual and performance evaluation.</p></figcaption>
+            </figure>
+            <figure class="portrait-card" id="quality-color" data-slide>
+              <img src="images/manufacturing-color-measurement.jpg" alt="Digital color measurement of coating samples" loading="lazy">
+              <span class="portrait-badge">Quality</span>
+              <figcaption class="portrait-caption"><h3>Digital color verification</h3><p>Instrument readings help compare sample color values and support repeatable production.</p></figcaption>
+            </figure>
+            <figure class="portrait-card" id="quality-hardness" data-slide>
+              <img src="images/manufacturing-hardness-test.jpg" alt="Hardness testing of a cured blue coating sample" loading="lazy">
+              <span class="portrait-badge">Quality</span>
+              <figcaption class="portrait-caption"><h3>Cured-film hardness test</h3><p>Physical checks help confirm that cured coating samples meet the intended performance target.</p></figcaption>
+            </figure>
+            <figure class="portrait-card" id="finished-goods" data-slide>
+              <img src="images/manufacturing-packaging.jpg" alt="Rows of finished URBVO coating buckets" loading="lazy">
+              <span class="portrait-badge">Finished Goods</span>
+              <figcaption class="portrait-caption"><h3>Retail-ready products</h3><p>Branded coating buckets are prepared in organized batches for order fulfillment.</p></figcaption>
+            </figure>
+            <figure class="portrait-card" id="market-support" data-slide>
+              <img src="images/manufacturing-packaging-design.jpg" alt="URBVO team member preparing coating packaging artwork" loading="lazy">
+              <span class="portrait-badge">Market Support</span>
+              <figcaption class="portrait-caption"><h3>Packaging artwork support</h3><p>Product information and packaging layouts can be adapted for distributor and private-label programs.</p></figcaption>
+            </figure>
+            <figure class="portrait-card" id="shipment-container" data-slide>
+              <img src="images/manufacturing-container-loading.jpg" alt="Forklift loading wrapped coating pallets into a shipping container" loading="lazy">
+              <span class="portrait-badge">Export</span>
+              <figcaption class="portrait-caption"><h3>Container loading</h3><p>Protected pallets are handled carefully as export shipments are loaded and secured.</p></figcaption>
+            </figure>
+            <figure class="portrait-card" id="shipment-pallet" data-slide>
+              <img src="images/manufacturing-pallet-loading.jpg" alt="Forklift moving wrapped coating pallets for export shipment" loading="lazy">
+              <span class="portrait-badge">Shipment</span>
+              <figcaption class="portrait-caption"><h3>Palletized export orders</h3><p>Packaged products are organized by pallet to support efficient handling and delivery.</p></figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="slider-dots" data-slider-dots aria-label="Factory gallery positions"></div>
+      </div>
+      <p class="slider-note">Use the arrows or swipe to move through production, quality control, packing and shipment.</p>
+    </div>
+  </section>
+
+  <section class="process-section" id="process">
+    <div class="container">
+      <div class="process-head">
+        <div>
+          <div class="eyebrow">From Idea To Shipment</div>
+          <h2>How an order moves through URBVO.</h2>
+        </div>
+        <p>One coordinated workflow keeps product requirements, production, quality checks and delivery aligned.</p>
+      </div>
+      <div class="process-grid">
+        <article class="process-card"><div class="process-num">01</div><h3>Review</h3><p>Product, market and pack requirements.</p></article>
+        <article class="process-card"><div class="process-num">02</div><h3>Sample</h3><p>Formula direction and evaluation sample.</p></article>
+        <article class="process-card"><div class="process-num">03</div><h3>Setup</h3><p>Packaging, label and order preparation.</p></article>
+        <article class="process-card"><div class="process-num">04</div><h3>Production</h3><p>Controlled manufacturing to specification.</p></article>
+        <article class="process-card"><div class="process-num">05</div><h3>Quality</h3><p>Batch checks before final packing.</p></article>
+        <article class="process-card"><div class="process-num">06</div><h3>Shipment</h3><p>Export packing and delivery support.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-inner">
+      <div><h2>Ready to discuss your product?</h2><p>Tell us the product type, pack size and estimated volume.</p></div>
+      <a class="btn btn-primary" href="index.html#contact">Talk With Our Factory →</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="site-footer-grid"><div class="site-footer-brand"><img src="images/urbvo-logo.png" alt="URBVO"><p>Professional coating systems and retail-ready products for project buyers, distributors and private-label partners.</p><div class="site-footer-contact"><strong>Start a conversation</strong><a href="index.html#contact">Send a project or distribution inquiry →</a></div></div><div><h4>Company</h4><a href="about-us.html">About Us</a><a href="manufacturing.html">Manufacturing</a><a href="certificates.html">Certificates</a><a href="blog.html">Blog</a></div><div><h4>Solutions</h4><a href="index.html#systems">Professional Systems</a><a href="retail-products.html">Retail &amp; Distribution</a><a href="cases.html">Projects &amp; Partnerships</a><a href="index.html#contact">OEM / Private Label</a></div><div><h4>Support</h4><a href="index.html#contact">Technical Support</a><a href="index.html#contact">Request Documents</a><a href="index.html#contact">Contact</a></div></div><div class="site-footer-bottom"><span>© 2026 URBVO · Yiwu Zhuangyu Technology Co., Ltd.</span><span>Technical files supplied on request</span></div></div></footer>
+<script>
+(() => {
+  const launch = document.querySelector('[data-video-launch]');
+  if (!launch || !/^https?:$/.test(window.location.protocol)) return;
+
+  launch.addEventListener('click', (event) => {
+    event.preventDefault();
+    const iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/BsXgX7mrEXM?rel=0&autoplay=1';
+    iframe.title = 'URBVO factory and coating manufacturing video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.allowFullscreen = true;
+    launch.replaceWith(iframe);
+  });
+})();
+
+(() => {
+  const slider = document.querySelector('[data-factory-slider]');
+  if (!slider) return;
+
+  const slides = [...slider.querySelectorAll('[data-slide]')];
+  const track = slider.querySelector('[data-slider-track]');
+  const dotsContainer = slider.querySelector('[data-slider-dots]');
+  const currentLabel = slider.querySelector('[data-slider-current]');
+  const totalLabel = slider.querySelector('[data-slider-total]');
+  const viewport = slider.querySelector('.slider-viewport');
+  const hashIndex = slides.findIndex(slide => `#${slide.id}` === window.location.hash);
+  let current = Math.max(0, hashIndex);
+  let touchStartX = 0;
+  let resizeFrame = 0;
+
+  totalLabel.textContent = String(slides.length).padStart(2, '0');
+  viewport.setAttribute('tabindex', '0');
+
+  function visibleCount() {
+    if (window.innerWidth <= 560) return 1;
+    if (window.innerWidth <= 900) return 2;
+    return 3;
+  }
+
+  function maxStart() {
+    return Math.max(0, slides.length - visibleCount());
+  }
+
+  function buildDots() {
+    dotsContainer.innerHTML = '';
+    for (let index = 0; index <= maxStart(); index += 1) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'slider-dot';
+      dot.setAttribute('aria-label', `Show factory photo ${index + 1}`);
+      dot.addEventListener('click', () => showSlide(index, true));
+      dotsContainer.appendChild(dot);
+    }
+  }
+
+  function showSlide(index, updateHash = false) {
+    const lastStart = maxStart();
+    current = index < 0 ? lastStart : index > lastStart ? 0 : index;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    const step = slides[0].getBoundingClientRect().width + gap;
+    track.style.transform = `translate3d(${-current * step}px, 0, 0)`;
+    const visible = visibleCount();
+    slides.forEach((slide, slideIndex) => {
+      const shown = slideIndex >= current && slideIndex < current + visible;
+      slide.setAttribute('aria-hidden', shown ? 'false' : 'true');
+    });
+    [...dotsContainer.children].forEach((dot, dotIndex) => {
+      dot.classList.toggle('is-active', dotIndex === current);
+      dot.setAttribute('aria-current', dotIndex === current ? 'true' : 'false');
+    });
+    const first = String(current + 1).padStart(2, '0');
+    const last = String(Math.min(slides.length, current + visible)).padStart(2, '0');
+    currentLabel.textContent = first === last ? first : `${first}–${last}`;
+    if (updateHash) history.replaceState(null, '', `#${slides[current].id}`);
+  }
+
+  slider.querySelector('[data-slider-prev]').addEventListener('click', () => showSlide(current - 1, true));
+  slider.querySelector('[data-slider-next]').addEventListener('click', () => showSlide(current + 1, true));
+
+  slider.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') showSlide(current - 1, true);
+    if (event.key === 'ArrowRight') showSlide(current + 1, true);
+  });
+
+  viewport.addEventListener('touchstart', event => {
+    touchStartX = event.changedTouches[0].clientX;
+  }, { passive: true });
+  viewport.addEventListener('touchend', event => {
+    const distance = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(distance) < 45) return;
+    showSlide(distance > 0 ? current - 1 : current + 1, true);
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(() => {
+      current = Math.min(current, maxStart());
+      buildDots();
+      showSlide(current);
+    });
+  });
+
+  buildDots();
+  showSlide(current);
+})();
+</script>
+</body>
+</html>
+
+
+

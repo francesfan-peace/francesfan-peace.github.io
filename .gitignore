@@ -1,0 +1,9 @@
+# Local/editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Never publish source working materials or dependency folders
+source-materials/
+node_modules/
+
